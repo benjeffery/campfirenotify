@@ -18,11 +18,11 @@ def user_name(campfire, user_id):
         return seen_users[user_id]
 
 def notify(user, message):
-    if not pynotify.init("Timekpr notification"):
+    if not pynotify.init("Urgency"):
         exit()
               
     n = pynotify.Notification(user, message, "file://" + os.path.abspath(os.path.curdir) + "/campfire.gif")
-    n.set_urgency(pynotify.URGENCY_NORMAL)
+    n.set_urgency(pynotify.URGENCY_LOW)
 #    n.set_timeout(1000) # 10 seconds
 #    n.set_category("device")
     
@@ -59,7 +59,6 @@ if __name__ == "__main__":
         time.sleep(config['period'])
         print 'Checking'
         messages = [m for room in listen_rooms for m in room.transcript()]
-        print messages
         new_messages = [m for m in messages if m['id'] not in seen_messages and m['type'] == 'TextMessage']
         seen_messages.update(t['id'] for t in new_messages)
         print len(new_messages), 'new messages'
