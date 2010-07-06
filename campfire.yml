@@ -1,0 +1,21 @@
+subdomain: billmonitor
+api_key: YOUR API KEY HERE
+period: 10
+
+#Leave empty for a list of rooms to be printed, or set to 'all'
+listen_rooms:
+  - Success Crew Alpha Go
+
+user_blacklist:
+  - Ben Jeffery
+
+#case insensitive
+trigger_words:
+  - ben
+  - engine
+  - restart
+  - restarting
+  - '?'
+  
+
+

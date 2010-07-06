@@ -1,0 +1,3 @@
+Quick script I made as we use campfire at work and i didn't want to check it all the time. Edit campfire.yml to put your API key in - the rest is pretty clear. Needs a lot more work to be awesome.
+
+Uses http://github.com/rhymes/pinder
