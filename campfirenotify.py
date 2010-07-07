@@ -58,7 +58,11 @@ if __name__ == "__main__":
         print 'Sleeping'
         time.sleep(config['period'])
         print 'Checking'
-        messages = [m for room in listen_rooms for m in room.transcript()]
+        try:
+            messages = [m for room in listen_rooms for m in room.transcript()]
+        except:
+            print "get error"
+            messages = []
         new_messages = [m for m in messages if m['id'] not in seen_messages and m['type'] == 'TextMessage']
         seen_messages.update(t['id'] for t in new_messages)
         print len(new_messages), 'new messages'
